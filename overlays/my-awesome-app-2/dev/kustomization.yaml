@@ -17,12 +17,7 @@ namePrefix:
 nameSuffix:
   -v1
 
-patchesStrategicMerge:
-  - rollout-replica.yaml
-  - hpa.yaml
-  - ingress.yaml
-
 images:
   - name: nginx
-    newName: gitlab.bbdev.team:5050/exps/test-python-app
-    newTag: 1.4.1
+    newName: nginx
+    newTag: latest

@@ -3,25 +3,26 @@ kind: Kustomization
 bases:
   - ../../../base
 
-namespace: prod
+namespace: dev
 
 commonLabels:
-  env: prod
+  env: dev
 
 commonAnnotations:
-  version: stable
+  version: 1.4.1
 
 namePrefix:
-  prod-
+  dev-
 
 nameSuffix:
   -v1
 
 patchesStrategicMerge:
-  - limits.yaml
-  - service.yaml
+  - rollout-replica.yaml
+  - hpa.yaml
+  - ingress.yaml
 
 images:
   - name: nginx
-    newName: gitlab.bbdev.team:5050/exps/test-python-app
-    newTag: stable
+    newName: nginx
+    newTag: latest
