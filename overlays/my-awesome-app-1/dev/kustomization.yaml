@@ -3,7 +3,7 @@ kind: Kustomization
 bases:
   - ../../../base
 
-namespace: app1
+namespace: default
 
 commonLabels:
   env: app1
