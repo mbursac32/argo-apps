@@ -1,0 +1,31 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: 'true'
+    nginx.ingress.kubernetes.io/force-ssl-redirect: 'true'
+    nginx.ingress.kubernetes.io/ssl-redirect: 'true'
+  labels:
+    app.kubernetes.io/instance: test-python
+    app.kubernetes.io/name: test-python
+    app.kubernetes.io/version: 1.16.0
+    argocd.argoproj.io/instance: test-python
+  name: test-python
+spec:
+  rules:
+    - host: test-python.bbdev.cyou
+      http:
+        paths:
+          - backend:
+              service:
+                name: test-python
+                port:
+                  number: 80
+            path: /
+            pathType: ImplementationSpecific
+  tls:
+    - hosts:
+        - test-python.bbdev.cyou
+      secretName: test-python-tls

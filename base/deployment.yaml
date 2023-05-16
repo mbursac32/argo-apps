@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-python
+  labels:
+    app: test-python
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-python
+  template:
+    metadata:
+      labels:
+        app: test-python
+    spec:
+      containers:
+      - name: test-python
+        image: nginx
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
