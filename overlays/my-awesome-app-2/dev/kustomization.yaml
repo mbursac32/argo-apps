@@ -3,16 +3,16 @@ kind: Kustomization
 bases:
   - ../../../base
 
-namespace: dev
+namespace: app2
 
 commonLabels:
-  env: dev
+  env: app2
 
 commonAnnotations:
   version: 1.4.1
 
 namePrefix:
-  dev-
+  app2-
 
 nameSuffix:
   -v1

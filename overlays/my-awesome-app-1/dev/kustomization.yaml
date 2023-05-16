@@ -3,26 +3,21 @@ kind: Kustomization
 bases:
   - ../../../base
 
-namespace: dev
+namespace: app1
 
 commonLabels:
-  env: dev
+  env: app1
 
 commonAnnotations:
   version: 1.4.1
 
 namePrefix:
-  dev-
+  app1-
 
 nameSuffix:
   -v1
 
-patchesStrategicMerge:
-  - rollout-replica.yaml
-  - hpa.yaml
-  - ingress.yaml
-
 images:
   - name: nginx
     newName: nginx
-    newTag: latest
+    newTag: alpine
