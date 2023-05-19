@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-python
+spec:
+  template:
+    spec:
+      containers:
+      - name: test-python
+        image: nginx
+        envFrom:
+        - secretRef:
+          name: mysecret
