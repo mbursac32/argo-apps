@@ -5,6 +5,9 @@ bases:
 
 namespace: argocd
 
+patchesStrategicMerge:
+  - secret.yaml
+
 commonLabels:
   env: app4
 
