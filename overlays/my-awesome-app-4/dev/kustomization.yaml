@@ -21,6 +21,13 @@ namePrefix:
 nameSuffix:
   -v1
 
+configurations:
+  - configuration/sealed-secret-config.yaml
+  
+secretGenerator:
+  - name: app4-mysecret-v1
+    type: Opaque
+
 images:
   - name: nginx
     newName: nginx
