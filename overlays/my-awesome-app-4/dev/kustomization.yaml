@@ -29,7 +29,6 @@ generatorOptions:
     sealedsecrets.bitnami.com/managed: "true"
     sealedsecrets.bitnami.com/namespace-wide: "true"
     argocd.argoproj.io/compare-options: IgnoreExtraneous
-    argocd.argoproj.io/sync-options: Prune=false
 
 secretGenerator:
   - name: mysecret
