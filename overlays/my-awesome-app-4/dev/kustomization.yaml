@@ -24,6 +24,11 @@ nameSuffix:
 configurations:
   - configuration/sealed-secret-config.yaml
   
+generatorOptions:
+  annotations:
+    sealedsecrets.bitnami.com/managed: "true"
+    sealedsecrets.bitnami.com/namespace-wide: "true"
+
 secretGenerator:
   - name: mysecret
     type: Opaque
