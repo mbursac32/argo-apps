@@ -25,7 +25,7 @@ configurations:
   - configuration/sealed-secret-config.yaml
   
 secretGenerator:
-  - name: app4-mysecret-v1
+  - name: mysecret
     type: Opaque
 
 images:
