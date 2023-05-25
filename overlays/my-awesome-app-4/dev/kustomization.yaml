@@ -32,6 +32,7 @@ generatorOptions:
 secretGenerator:
   - name: mysecret
     type: Opaque
+    env: sample-secret.txt
 
 images:
   - name: nginx
