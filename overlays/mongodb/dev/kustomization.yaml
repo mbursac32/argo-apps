@@ -74,7 +74,15 @@ patches:
       value:
         - secretRef:
             name: mysecret-v1
-
+    - op: add
+      path: /spec/template/spec/containers/0/resources
+      value:
+       requests:
+         memory: "128Mi"
+         cpu: "500m"
+       limits:
+         memory: "128Mi"
+         cpu: "500m"
 
 
 
