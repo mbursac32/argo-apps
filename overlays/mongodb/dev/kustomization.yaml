@@ -4,8 +4,10 @@ bases:
   - ../../../base
 resources:
   - pvc.yaml
-  - secret.yaml
 
+patchesStrategicMerge:
+  - secret.yaml
+  
 namespace: argocd
 
 commonLabels:
