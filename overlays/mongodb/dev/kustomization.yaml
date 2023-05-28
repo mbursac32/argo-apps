@@ -7,7 +7,8 @@ resources:
 
 patchesStrategicMerge:
   - secret.yaml
-  
+  - service.yaml
+
 namespace: argocd
 
 commonLabels:
