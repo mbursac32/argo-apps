@@ -72,9 +72,11 @@ patches:
     - op: add
       path: /spec/template/spec/containers/0/env
       value:
-        - name: MONGO_INITDB_ROOT_USERNAME
-          value: root
-        - name: MONGO_INITDB_ROOT_PASSWORD
+        - name: MONGO_USERDB_ADMIN_USERNAME
+          value: user
+        - name: MONGO_USERDB_ADMIN_PASSWORD
+          value: example
+        - name: MONGO_USERDB_ADMIN_DATABASE
           value: example
     - op: add
       path: /spec/template/spec/containers/0/resources
