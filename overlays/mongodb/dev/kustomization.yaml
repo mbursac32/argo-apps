@@ -28,7 +28,9 @@ patches:
       value: mongo
     - op: replace
       path: /spec/template/spec/containers/0/ports
-      value: 27017
+      value: 
+      - containerPort: 27017
+        name: mongodb
     - op: replace
       path: /kind
       value: StatefulSet
