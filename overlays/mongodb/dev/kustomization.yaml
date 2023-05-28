@@ -73,15 +73,9 @@ patches:
       path: /spec/template/spec/containers/0/env
       value:
         - name: MONGO_INITDB_ROOT_USERNAME
-          valueFrom:
-            secretKeyRef:
-              name: mysecret
-              key: MONGO_INITDB_ROOT_USERNAME
+          value: root
         - name: MONGO_INITDB_ROOT_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: mysecret
-              key: MONGO_INITDB_ROOT_PASSWORD
+          value: example
     - op: add
       path: /spec/template/spec/containers/0/resources
       value:
