@@ -86,10 +86,10 @@ patches:
       path: /spec/template/spec/containers/0/resources
       value:
        requests:
-         memory: "128Mi"
+         memory: "256Mi"
          cpu: "500m"
        limits:
-         memory: "128Mi"
+         memory: "256Mi"
          cpu: "500m"
 
 
