@@ -70,10 +70,18 @@ patches:
           persistentVolumeClaim: 
               claimName: "mongodb-pvc"
     - op: add
-      path: /spec/template/spec/containers/0/envFrom
+      path: /spec/template/spec/containers/0/env
       value:
-        - secretRef:
-            name: mysecret-v1
+        - name: MONGO_INITDB_ROOT_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: mysecret
+              key: MONGO_INITDB_ROOT_USERNAME
+        - name: MONGO_INITDB_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysecret
+              key: MONGO_INITDB_ROOT_PASSWORD
     - op: add
       path: /spec/template/spec/containers/0/resources
       value:
