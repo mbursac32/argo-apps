@@ -15,6 +15,20 @@ commonLabels:
 commonAnnotations:
   version: 1.1.1
 
+configurations:
+  - configuration/sealed-secret-config.yaml
+  
+generatorOptions:
+  annotations:
+    sealedsecrets.bitnami.com/managed: "true"
+    sealedsecrets.bitnami.com/namespace-wide: "true"
+    argocd.argoproj.io/compare-options: IgnoreExtraneous
+    argocd.argoproj.io/sync-options: Prune=false
+
+secretGenerator:
+  - name: mysecret
+    type: Opaque
+
 patches:
 - target:
     kind: Deployment
@@ -45,6 +59,11 @@ patches:
         - name: mongodb-persistent-storage
           persistentVolumeClaim: 
               claimName: "mongodb-pvc"
+    - op: add
+      path: /spec/template/spec/containers/0/envFrom
+      value:
+        - secretRef:
+            name: mysecret-v1
 
 
 
