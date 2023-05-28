@@ -5,7 +5,7 @@ resources:
   - deployment.yaml
   - secret.yaml
  # - hpa.yaml
- # - service.yaml
+  - service.yaml
  # - ingress.yaml
   
 

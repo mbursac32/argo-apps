@@ -34,6 +34,13 @@ secretGenerator:
 
 patches:
 - target:
+    kind: Service
+    name: .*
+  patch: |-
+    - op: replace
+      path: /metadata/name
+      value: mongo-db
+- target:
     kind: Deployment
     name: .*
   patch: |-
