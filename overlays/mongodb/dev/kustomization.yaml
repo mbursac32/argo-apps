@@ -4,7 +4,7 @@ bases:
   - ../../../base
 resources:
   - pvc.yaml
-#  - secret.yaml
+  - secret.yaml
 
 namespace: argocd
 
