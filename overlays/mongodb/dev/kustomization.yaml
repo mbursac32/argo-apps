@@ -72,11 +72,9 @@ patches:
     - op: add
       path: /spec/template/spec/containers/0/env
       value:
-        - name: MONGO_USERDB_ADMIN_USERNAME
+        - name: MONGODB_ROOT_USER
           value: user
-        - name: MONGO_USERDB_ADMIN_PASSWORD
-          value: example
-        - name: MONGO_USERDB_ADMIN_DATABASE
+        - name: MONGODB_ROOT_PASSWORD
           value: example
     - op: add
       path: /spec/template/spec/containers/0/resources
@@ -95,5 +93,5 @@ nameSuffix:
 
 images:
   - name: nginx
-    newName: mongo
+    newName: bitnami/mongodb
     newTag: latest
