@@ -56,6 +56,11 @@ patches:
           persistentVolumeClaim: 
               claimName: "mongodb-pvc"
     - op: add
+      path: /spec/template/spec/envFrom
+      value:
+        - secretRef:
+            name: mysecret-v1          
+    - op: add
       path: /spec/template/spec/containers/0/resources
       value:
        requests:
